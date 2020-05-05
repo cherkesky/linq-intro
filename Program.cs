@@ -130,5 +130,11 @@ public class Program
     bool areAllEven = sampleNumbers.All(number => number % 2 == 0);
     System.Console.WriteLine($"areAllEven {areAllEven}");
 
+
+    //Limit an array to the items that meet a criteria
+    IEnumerable<int> onlyEvens = sampleNumbers.Where(number => number % 2 == 0);
+    foreach (int even in onlyEvens){
+    System.Console.WriteLine($"onlyEvens {even}");
+    }
   }
 }
