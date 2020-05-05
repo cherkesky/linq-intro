@@ -97,7 +97,7 @@ public class Program
       Console.WriteLine($" FROM idealSizes IEnumerable {c}");
     }
 
-
+    Console.WriteLine("**************************************");
     // Give this C# List of numbers
     List<int> numbers = new List<int>() { 9, -59, 23, 71, -74, 13, 52, 44, 2 };
 
@@ -106,6 +106,7 @@ public class Program
         numbers that match two conditions. Then chain the OrderBy()
         method to order them ascending
     */
+
     var smallPositiveNumbers = numbers.Where(n => n < 40 && n > 0).OrderBy(n => n);
 
     /*
@@ -115,7 +116,19 @@ public class Program
     var allBetweenLarge = numbers.All(n => n > -100 && n < 400);  // true
     var allBetweenSmall = numbers.All(n => n > -5 && n < 39);  // false
     System.Console.WriteLine($"allBetweenLarge {allBetweenLarge}");
-        System.Console.WriteLine($"allBetweenSmall {allBetweenSmall}");
+    System.Console.WriteLine($"allBetweenSmall {allBetweenSmall}");
+
+    Console.WriteLine("**************************************");
+    System.Console.WriteLine("smallPositiveNumbers");
+    foreach (int num in smallPositiveNumbers)
+    {
+      System.Console.WriteLine(num);
+    }
+
+    // check that all nums are even
+    List<int> sampleNumbers = new List<int> { 18, 9, 5, 6, 84, 2, 5, 13 };
+    bool areAllEven = sampleNumbers.All(number => number % 2 == 0);
+    System.Console.WriteLine($"areAllEven {areAllEven}");
 
   }
 }
