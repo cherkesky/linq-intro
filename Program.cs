@@ -132,7 +132,10 @@ public class Program
 
 
     //Limit an array to the items that meet a criteria
-    IEnumerable<int> onlyEvens = sampleNumbers.Where(number => number % 2 == 0);
+
+    // IEnumerable<int> onlyEvens = sampleNumbers.Where(number => number % 2 == 0);
+    var onlyEvens = sampleNumbers.Where(number => number % 2 == 0);
+
     foreach (int even in onlyEvens){
     System.Console.WriteLine($"onlyEvens {even}");
     }
