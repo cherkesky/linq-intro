@@ -136,8 +136,19 @@ public class Program
     // IEnumerable<int> onlyEvens = sampleNumbers.Where(number => number % 2 == 0);
     var onlyEvens = sampleNumbers.Where(number => number % 2 == 0);
 
-    foreach (int even in onlyEvens){
-    System.Console.WriteLine($"onlyEvens {even}");
+    foreach (int even in onlyEvens)
+    {
+      System.Console.WriteLine($"onlyEvens {even}");
     }
+    onlyEvens.ToList().ForEach(evenValue => Console.WriteLine(evenValue + " is an even value"));
+
+
+    IEnumerable<int> sampleNumbersSquared = sampleNumbers.Select(number => number * number);
+        foreach (int item in sampleNumbersSquared){
+                System.Console.WriteLine($"sampleNumbersSquared {item}");
+        }
+
+
+
   }
 }
