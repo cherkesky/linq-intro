@@ -96,5 +96,26 @@ public class Program
     {
       Console.WriteLine($" FROM idealSizes IEnumerable {c}");
     }
+
+
+    // Give this C# List of numbers
+    List<int> numbers = new List<int>() { 9, -59, 23, 71, -74, 13, 52, 44, 2 };
+
+    /*
+        Use the IEnumerable Where() method to build a new array of
+        numbers that match two conditions. Then chain the OrderBy()
+        method to order them ascending
+    */
+    var smallPositiveNumbers = numbers.Where(n => n < 40 && n > 0).OrderBy(n => n);
+
+    /*
+        Use All() to see if every item in the collection passes the
+        provided conditions.
+    */
+    var allBetweenLarge = numbers.All(n => n > -100 && n < 400);  // true
+    var allBetweenSmall = numbers.All(n => n > -5 && n < 39);  // false
+    System.Console.WriteLine($"allBetweenLarge {allBetweenLarge}");
+        System.Console.WriteLine($"allBetweenSmall {allBetweenSmall}");
+
   }
 }
